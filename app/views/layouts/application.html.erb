@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Objective</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <%= csrf_meta_tags %><!-- Le styles -->
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+</head>
+
+<body data-spy="scroll" data-target=".obj-sidebar">
+    <div class="container-fluid">
+    	<div class="content" style="padding:20px;">
+	        <div class="row-fluid">
+	            <div class="span3" style="border-top:5px solid #87b0da">
+	            	<div class="pagination-centered">
+		            	<%= image_tag "ObjIO.png" %>
+	            	</div>
+	                <h1>Objective.io</h1>
+	                
+	                <p class="lead muted" style="margin-left:3px;">Dan Fairaizl</p>
+	                
+	                <hr />
+	                
+	                <%= image_tag "ObjGithub.png" %>
+	                
+	            </div>
+	
+	            <div class="span8" style="border-top:5px solid #87b0da">
+	                <%= yield %>
+	            </div>
+	        </div> <!--- /row --->
+	        <hr>
+
+		    <footer>
+		        <p>&copy; Objective.io 2012</p>
+		    </footer>
+    	</div> <!--- content --->
+    </div> <!--- /container --->
+    
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <%= javascript_include_tag "application" %>
+</body>
+</html>
