@@ -44,6 +44,8 @@ Objective::Application.routes.draw do
     # Directs /admin/products/* to Admin::ProductsController
     # (app/controllers/admin/products_controller.rb)
     match '/' => 'index#index'
+    match '/posts' => 'posts#index'
+    
   end
 
   # You can have the root of your site routed with "root"
