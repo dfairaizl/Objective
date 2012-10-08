@@ -4,4 +4,8 @@ class Admin::PostsController < AdminController
   
   end
   
+  def new
+  	render :new
+  end
+  
 end
