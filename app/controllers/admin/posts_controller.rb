@@ -8,4 +8,9 @@ class Admin::PostsController < AdminController
   	render :new
   end
   
+  def show
+  	puts "Editing %s" % params[:post_name]
+  	render :new
+  end
+  
 end
