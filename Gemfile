@@ -39,3 +39,6 @@ gem 'jquery-rails'
 #MongoDB
 gem 'mongo_mapper'
 gem 'bson_ext'
+
+#Redactor WYSIWYG
+gem 'redactor-rails'

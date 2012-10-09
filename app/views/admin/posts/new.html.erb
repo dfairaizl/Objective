@@ -7,6 +7,85 @@
 </div>
 <div class="row">
 	<div class="span12">
-		<textarea rows="15" class="span12"></textarea>
+		<div class="row">
+			<div class="span12">
+				<form class="form-inline">
+				    <label for="inputEmail" style="margin-right: 10px;"><h5>Title:</h5></label>
+				    <input type="text" id="inputEmail" placeholder="Post Title" class="span6" />
+				</form>
+			</div>			
+		</div>
+		<div class="row">
+			<div class="span12">
+				<input type="submit" class="btn btn-primary pull-right" id="create-post" name="create-post" value="Create" />
+			</div>
+		</div>
+		<hr />
+	</div>
+</div>
+<div class="row">
+	<div class="span12">
+		<p class="pull-left">Last Save: Just Now</p>
+		<p class="pull-right">Current Status: <strong>Draft</strong></p>
+		<div class="clearfix"></div>
+		<%= text_area_tag :redactor_content, "", :class => "span12 redactor" %>
+		<br />
+		<hr />
+		<div>
+			<h3>More Information</h3>
+			<p>Use the information in this section optionally to add meta-data into this blog post. Meta-data greatly improves SEO and will help more people find the content you are creating.</p>
+			<div class="row">
+				<div class="span4">
+					<h5>Primary Category</h5>
+					<select name="primary-category">
+						<option value="1">iOS</option>
+						<option value="2">OSX</option>
+						<option value="2">Cocoa</option>
+					</select>
+					<h5 class="muted">Secondary Category</h5>
+					<select name="primary-category">
+						<option value="1">iOS</option>
+						<option value="2">OSX</option>
+						<option value="2">Cocoa</option>
+					</select>
+				</div>
+				<div class="span4">
+					<h5>Tags</h5>
+					<span class="label label-info">iOS</span>
+					<span class="label label-info">Engineering</span>
+					<span class="label label-info">iOS 6</span>
+					<span class="label label-info">Apple</span>
+					<span class="label label-info">Rant</span>
+					<span class="label label-info">iOS</span>
+					<span class="label label-info">Engineering</span>
+					<span class="label label-info">iOS 6</span>
+					<span class="label label-info">Apple</span>
+					<span class="label label-info">Rant</span>
+					<span class="label label-info">iOS</span>
+					<span class="label label-info">Engineering</span>
+					<span class="label label-info">iOS 6</span>
+					<span class="label label-info">Apple</span>
+					<span class="label label-info">Rant</span>
+					<span class="label label-info">iOS</span>
+					<span class="label label-info">Engineering</span>
+					<span class="label label-info">iOS 6</span>
+					<span class="label label-info">Apple</span>
+					<span class="label label-info">Rant</span>
+					<span class="label label-info">iOS</span>
+					<span class="label label-info">Engineering</span>
+					<span class="label label-info">iOS 6</span>
+					<span class="label label-info">Apple</span>
+					<span class="label label-info">Rant</span>
+				</div>
+				<div class="span4">
+					<h5>Meta Title:</h5>
+					<input type="text" class="input-large" name="meta-title" id="meta-title" />
+					<h5>Keywords:</h5>
+					<textarea class="span4" rows="3" name="meta-keywords" id="meta-keywords"></textarea>
+				</div>
+			</div>
+		</div>
+		<hr />
+		<input type="submit" class="btn btn-primary pull-right" id="create-post" name="create-post" value="Create" />
 	</div>
 </div>
