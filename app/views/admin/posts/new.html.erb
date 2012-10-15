@@ -28,7 +28,21 @@
 		<p class="pull-left">Last Save: Just Now</p>
 		<p class="pull-right">Current Status: <strong>Draft</strong></p>
 		<div class="clearfix"></div>
-		<%= text_area_tag :redactor_content, "", :class => "span12 redactor" %>
+		<div class="navbar">
+			<div class="navbar-inner">
+				<form class="navbar-form">
+				  <button type="button" class="btn">B</button>
+				  <button type="button" class="btn">I</button>
+				  <button type="button" class="btn">H1</button>
+				  <button type="button" class="btn">H2</button>
+				  <button type="button" class="btn">&lt;a&gt;</button>
+				  <button type="button" class="btn">&lt;img&gt;</button>
+				  <button type="button" class="btn">&lt;hr&gt;</button>
+				</form>
+			</div>
+		</div>
+		<textarea name="editor" id="editor" class="span12" rows="12"></textarea>
+		
 		<br />
 		<hr />
 		<div>
