@@ -37,8 +37,7 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 #MongoDB
-gem 'mongo_mapper'
-gem 'bson_ext'
+gem "mongoid", "~> 3.0.0"
 
 #Redactor WYSIWYG
-gem 'redactor-rails'
+#gem 'redactor-rails'
