@@ -66,7 +66,7 @@
 		<a href="<%= admin_posts_new_path %>" class="btn pull-right">New Post</a>
 		<div class="clearfix"></div>
 		<p class="muted" style="text-align:center;">
-			2 Posts Total
+			<%= pluralize(@posts.count, "Post") %> Total
 		</p>
 		<hr />	
 	</div>
