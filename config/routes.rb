@@ -46,6 +46,7 @@ Objective::Application.routes.draw do
     match '/' => 'index#index'
     match '/posts' => 'posts#index'
     match '/posts/new' => 'posts#new'
+    match '/posts/create' => 'posts#create'
     match '/posts/:post_name' => 'posts#show'
   end
 

@@ -5,6 +5,18 @@
 		<hr />	
 	</div>
 </div>
+<% if flash.count > 0 %>
+	<div class="row">
+		<div class="span8 offset2">
+			<% flash.each do | key, value | %>
+				<div class="alert alert-success">
+					<button type="button" class="close" data-dismiss="alert">x</button>
+					<%= value %>
+				</div>
+			<% end %>
+		</div>
+	</div>
+<% end %>
 <div class="row">
 	<div class="span12">
 		<p>
