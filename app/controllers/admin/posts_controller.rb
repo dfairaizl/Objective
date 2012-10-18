@@ -2,7 +2,11 @@ class Admin::PostsController < AdminController
   
   def index
   
-  	@posts = Post.all
+  	@posts = Post.where(:slug.ne => nil)
+  	  	
+  	@posts.each do | post |
+  		puts "slug:" + post.slug.to_s
+  	end
 
   end
   
@@ -16,6 +20,7 @@ class Admin::PostsController < AdminController
   def create
   
   	@post = Post.create(params[:post])
+#   	@post.create_slug
   	
   	if @post.save
   		flash[:notice] = "Post %s created successfully" % @post.title
