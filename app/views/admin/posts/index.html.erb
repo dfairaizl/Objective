@@ -35,32 +35,21 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td>1</td>
-					<td><a href="#">Binary Property Lists</a></td>
-					<td>Oct 5, 2012 8:00pm</td>
-					<td>Published</td>
-					<td>
-						<div class="btn-group">
-						  <button class="btn">Edit</button>
-						  <button class="btn">Archive</button>
-						  <button class="btn">Delete</button>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td>2</td>
-					<td><a href="#">Facebook Integration with iOS 6</a></td>
-					<td>Oct 7, 2012 10:00am</td>
-					<td>Draft</td>
-					<td>
-						<div class="btn-group">
-						  <button class="btn">Edit</button>
-						  <button class="btn">Archive</button>
-						  <button class="btn">Delete</button>
-						</div>
-					</td>
-				</tr>
+				<% @posts.each do | post | %>
+					<tr>
+						<td>1</td>
+						<td><a href="<%= admin_posts_show_path(:post_name => post.slug) %>"><%= post.title %></a></td>
+						<td>Oct 5, 2012 8:00pm</td>
+						<td>Published</td>
+						<td>
+							<div class="btn-group">
+							  <button class="btn">Edit</button>
+							  <button class="btn">Archive</button>
+							  <button class="btn">Delete</button>
+							</div>
+						</td>
+					</tr>
+				<% end %>
 			</tbody>
 		</table>
 		<a href="<%= admin_posts_new_path %>" class="btn pull-right">New Post</a>

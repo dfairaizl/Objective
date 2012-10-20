@@ -13,14 +13,12 @@ class Admin::PostsController < AdminController
   def new
   	
   	@post = Post.new
-  
-  	render :new
+#   	render :new
   end
   
   def create
   
   	@post = Post.create(params[:post])
-#   	@post.create_slug
   	
   	if @post.save
   		flash[:notice] = "Post %s created successfully" % @post.title
@@ -32,8 +30,9 @@ class Admin::PostsController < AdminController
   end
   
   def show
-  	puts "Editing %s" % params[:post_name]
-  	render :new
+  
+    @post = Post.find_by(slug: params[:post_name])
+  	
   end
   
 end

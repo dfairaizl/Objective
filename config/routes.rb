@@ -47,7 +47,7 @@ Objective::Application.routes.draw do
     match '/posts' => 'posts#index'
     match '/posts/new' => 'posts#new'
     match '/posts/create' => 'posts#create'
-    match '/posts/:post_name' => 'posts#show'
+    match '/posts/:post_name' => 'posts#show', :as => "posts_show"
   end
 
   # You can have the root of your site routed with "root"
