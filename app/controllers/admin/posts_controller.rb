@@ -13,7 +13,7 @@ class Admin::PostsController < AdminController
   def new
   	
   	@post = Post.new
-#   	render :new
+  	
   end
   
   def create
@@ -32,6 +32,18 @@ class Admin::PostsController < AdminController
   def show
   
     @post = Post.find_by(slug: params[:post_name])
+  	
+  end
+  
+  def update
+  
+  	post_data = params[:post]
+  	@post = Post.find_by(slug: post_data[:slug])
+  	
+  	if @post.update_attributes(post_data)
+  		flash[:notice] = "Post %s updated successfully" % @post.title
+  		redirect_to admin_posts_path
+  	end
   	
   end
   
