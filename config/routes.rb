@@ -41,14 +41,18 @@ Objective::Application.routes.draw do
 
   #Sample resource route within a namespace:
   namespace :admin do
-    # Directs /admin/products/* to Admin::ProductsController
-    # (app/controllers/admin/products_controller.rb)
+
+	#Admin Posts page
     match '/' => 'index#index'
     match '/posts' => 'posts#index'
     match '/posts/new' => 'posts#new'
     match '/posts/create' => 'posts#create'
     match '/posts/update' => 'posts#update'
     match '/posts/:post_name' => 'posts#show', :as => "posts_show"
+    
+    #Installer
+    resources :install
+    
   end
 
   # You can have the root of your site routed with "root"
