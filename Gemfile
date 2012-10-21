@@ -41,3 +41,6 @@ gem "mongoid", "~> 3.0.0"
 
 #Redactor WYSIWYG
 #gem 'redactor-rails'
+
+#Markdown
+gem 'redcarpet'
