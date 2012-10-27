@@ -64,10 +64,11 @@ module Objective
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
-
-	#Configure the generators to work with MongoMapper    
-    config.generators do |g|
-	  g.orm :mongo_mapper
-	end
+	
+	#Override the default HTML to display errors in erb files
+	config.action_view.field_error_proc = Proc.new { |html_tag, instance| 
+	  "#{html_tag}".html_safe 
+	}
+	
   end
 end
