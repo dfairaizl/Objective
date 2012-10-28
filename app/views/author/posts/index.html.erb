@@ -1,0 +1,93 @@
+<div class="row">
+	<div class="span12" style="text-align:center;">
+		<h1>Posts</h1>
+		<p class="lead">Edit your blog posts, create new posts, and manage everything here.</p>
+		<hr />	
+	</div>
+</div>
+<% if flash.count > 0 %>
+	<div class="row">
+		<div class="span8 offset2">
+			<% flash.each do | key, value | %>
+				<div class="alert alert-success">
+					<button type="button" class="close" data-dismiss="alert">x</button>
+					<%= value %>
+				</div>
+			<% end %>
+		</div>
+	</div>
+<% end %>
+<div class="row">
+	<div class="span12">
+		<p>
+			Here is a list of all the posts your currently have published or in progress.
+			<a href="<%= author_posts_new_path %>" class="btn pull-right">New Post</a>
+		</p>
+		
+		<table class="table table-bordered table-hover table-striped" style="margin-top:40px;">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Post</th>
+					<th>Created</th>
+					<th>Status</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @posts.each do | post | %>
+					<tr>
+						<td>1</td>
+						<td><a href="<%= author_posts_show_path(:post_name => post.slug) %>"><%= post.title %></a></td>
+						<td>Oct 5, 2012 8:00pm</td>
+						<td>Published</td>
+						<td>
+							<div class="btn-group">
+							  <button class="btn">Edit</button>
+							  <button class="btn">Archive</button>
+							  <button class="btn">Delete</button>
+							</div>
+						</td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+		<a href="<%= author_posts_new_path %>" class="btn pull-right">New Post</a>
+		<div class="clearfix"></div>
+		<p class="muted" style="text-align:center;">
+			<%= pluralize(@posts.count, "Post") %> Total
+		</p>
+		<hr />	
+	</div>
+</div>
+<div class="row">
+	<div class="span12">
+		<h3>Quick Post</h3>
+		<p>Need to get a thought out there? Write a quick post below and publish it.</p>
+	</div>
+</div>
+<div id="quick-post" class="row">
+	<div class="span8">
+		<div class="controls">
+			<textarea rows="10" class="span8 redactor" type="text"></textarea>
+		</div>
+	</div>
+	<div class="span4">
+		<div class="well well-small">
+			<p>Published in: <a href="#">Uncategorized</a></p>
+			<p>Published: Today at 8:12pm</p>
+			<p>Tags:</p>
+			<div class="tags" style="margin-bottom:10px;">
+				<span class="label label-info">iOS</span>
+				<span class="label label-info">Engineering</span>
+				<span class="label label-info">iOS 6</span>
+				<span class="label label-info">Apple</span>
+				<span class="label label-info">Rant</span>
+			</div>
+			<hr />
+			<input type="submit" id="create-quick-post" name="create-quick-post" value="Publish" class="btn btn-primary" />
+			<input type="submit" id="create-quick-post" name="create-quick-post" value="Create Draft" class="btn" />
+		</div>
+	</div>
+</div>
+

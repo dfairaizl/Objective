@@ -1,0 +1,106 @@
+<div class="row">
+	<div class="span12" style="text-align:center;">
+		<h1>Update Post</h1>
+		<p class="lead">Update your post here. Make it sing.</p>
+		<hr />	
+	</div>
+</div>
+<%= form_for([:author, @post], :url => author_posts_update_path, :html => { :class => "form-inline" } ) do |f| %>
+<%= f.hidden_field :slug, { :value => @post.slug } %>
+<div class="row">
+	<div class="span12">
+		<div class="row">
+			<div class="span12">
+			    <h3><%= @post.title %></h3>
+			</div>			
+		</div>
+		<div class="row">
+			<div class="span12">
+			<%= f.submit :class => "btn btn-primary pull-right", :value => "Update" %>
+			</div>
+		</div>
+		<hr />
+	</div>
+</div>
+<div id="new-post" class="row">
+	<div class="span12">
+		<p class="pull-left">Last Save: Just Now</p>
+		<p class="pull-right">Current Status: <strong>Draft</strong></p>
+		<div class="clearfix"></div>
+		<div class="navbar">
+			<div class="navbar-inner">
+				<form class="navbar-form">
+				  <button type="button" class="btn">B</button>
+				  <button type="button" class="btn">I</button>
+				  <button type="button" class="btn">H1</button>
+				  <button type="button" class="btn">H2</button>
+				  <button type="button" class="btn">&lt;a&gt;</button>
+				  <button type="button" class="btn">&lt;img&gt;</button>
+				  <button type="button" class="btn">&lt;hr&gt;</button>
+				</form>
+			</div>
+		</div>
+		
+		<%= f.text_area :content, :class => "span12", :rows => 12 %>
+		
+		<br />
+		<hr />
+		<div>
+			<h3>More Information</h3>
+			<p>Use the information in this section optionally to add meta-data into this blog post. Meta-data greatly improves SEO and will help more people find the content you are creating.</p>
+			<div class="row">
+				<div class="span4">
+					<h5>Primary Category</h5>
+					<select name="primary-category">
+						<option value="1">iOS</option>
+						<option value="2">OSX</option>
+						<option value="2">Cocoa</option>
+					</select>
+					<h5 class="muted">Secondary Category</h5>
+					<select name="primary-category">
+						<option value="1">iOS</option>
+						<option value="2">OSX</option>
+						<option value="2">Cocoa</option>
+					</select>
+				</div>
+				<div class="span4">
+					<h5>Tags</h5>
+					<span class="label label-info">iOS</span>
+					<span class="label label-info">Engineering</span>
+					<span class="label label-info">iOS 6</span>
+					<span class="label label-info">Apple</span>
+					<span class="label label-info">Rant</span>
+					<span class="label label-info">iOS</span>
+					<span class="label label-info">Engineering</span>
+					<span class="label label-info">iOS 6</span>
+					<span class="label label-info">Apple</span>
+					<span class="label label-info">Rant</span>
+					<span class="label label-info">iOS</span>
+					<span class="label label-info">Engineering</span>
+					<span class="label label-info">iOS 6</span>
+					<span class="label label-info">Apple</span>
+					<span class="label label-info">Rant</span>
+					<span class="label label-info">iOS</span>
+					<span class="label label-info">Engineering</span>
+					<span class="label label-info">iOS 6</span>
+					<span class="label label-info">Apple</span>
+					<span class="label label-info">Rant</span>
+					<span class="label label-info">iOS</span>
+					<span class="label label-info">Engineering</span>
+					<span class="label label-info">iOS 6</span>
+					<span class="label label-info">Apple</span>
+					<span class="label label-info">Rant</span>
+				</div>
+				<div class="span4">
+					<h5>Meta Title:</h5>
+					<input type="text" class="input-large" name="meta-title" id="meta-title" />
+					<h5>Keywords:</h5>
+					<textarea class="span4" rows="3" name="meta-keywords" id="meta-keywords"></textarea>
+				</div>
+			</div>
+		</div>
+		<hr />
+		<%= f.submit :class => "btn btn-primary pull-right", :value => "Update" %>
+	</div>
+</div>
+<% end %>
