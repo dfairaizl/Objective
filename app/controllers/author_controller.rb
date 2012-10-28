@@ -13,7 +13,7 @@ class AuthorController < ApplicationController
   	if @blog.nil?
   		redirect_to author_install_index_path
   	else 
-  		:authenticate_author!
+  		authenticate_author!
   	end
   	
   end
