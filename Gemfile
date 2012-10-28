@@ -44,3 +44,6 @@ gem "mongoid", "~> 3.0.0"
 
 #Markdown
 gem 'redcarpet'
+
+#Devise Authentication
+gem 'devise'
