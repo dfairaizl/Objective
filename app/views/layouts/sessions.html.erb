@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Objective</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <%= csrf_meta_tags %>
+    
+    <!-- Le styles -->
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    <style type="text/css">
+    	body {
+		  position: relative;
+		  padding-top: 40px;
+		}
+    </style>
+    
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+</head>
+
+<body>
+
+	<div class="navbar navbar-fixed-top">
+		<!-- Navigation -->
+        <div class="navbar-inner">
+            <div class="container">
+                
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"></button> 
+                
+                <a class="brand" href="#">Objective</a>
+
+                <div class="nav-collapse collapse">
+                    <ul class="nav pull-right"> 
+                    	<li><a href="<%= root_path %>">Back to Site</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div> <!-- /navbar -->
+    
+    <!-- layout -->
+    <div class="container">
+    	<div class="author-content" style="margin-top:40px;">
+	    	<%= yield %>
+    	</div>
+    	
+    	<hr />
+    	
+    	<footer style="margin-bottom:40px;">
+    		&copy; Objective.io 2012
+    	</footer>
+        
+    </div><!--- /container =-->
+    
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <%= javascript_include_tag "application" %>
+</body>
+</html>
