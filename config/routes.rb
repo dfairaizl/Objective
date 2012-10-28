@@ -1,5 +1,4 @@
 Objective::Application.routes.draw do
-  resources :tests
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -42,10 +41,15 @@ Objective::Application.routes.draw do
   #   end
 
   #Sample resource route within a namespace:
-  namespace :admin do
+  
+  devise_for :author, :controllers => { :sessions => "author/sessions" }
+  
+  namespace :author do
 
-	#Admin Posts page
+	#Author root
     match '/' => 'index#index'
+    
+    #Author Posts page
     match '/posts' => 'posts#index'
     match '/posts/new' => 'posts#new'
     match '/posts/create' => 'posts#create'
