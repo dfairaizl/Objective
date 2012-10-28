@@ -2,20 +2,18 @@ class AuthorController < ApplicationController
 
   layout 'author'
   
-  before_filter :setup_blog
+  before_filter :bootstrap_blog
   
   private
   
-  def setup_blog
-  
-  	:authenticate_author!
+  def bootstrap_blog
   	
   	@blog = Blog.first
   	
   	if @blog.nil?
   		redirect_to author_install_index_path
   	else 
-  		#authenticate user
+  		:authenticate_author!
   	end
   	
   end
