@@ -1,19 +1,9 @@
 class Author::PostsController < AuthorController
-
-  before_filter :authenticate_author!
-  
-  def after_sign_in_path_for(resource)
-  	redirect_to author_path
-  end
   
   def index
   
   	@posts = Post.where(:slug.ne => nil)
-  	  	
-  	@posts.each do | post |
-  		puts "slug:" + post.slug.to_s
-  	end
-
+  	
   end
   
   def new
