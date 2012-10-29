@@ -42,7 +42,7 @@ Objective::Application.routes.draw do
 
   #Sample resource route within a namespace:
   
-  devise_for :author, :controllers => { :sessions => "author/sessions" }
+  devise_for :author, :controllers => { :sessions => "author/sessions", :registrations => "author/registrations" }
   
   namespace :author do
 

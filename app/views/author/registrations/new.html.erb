@@ -1,18 +1,51 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
-
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
-
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
-
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+<div class="row">
+    <div class="span8 offset3">
+    	<% if flash.count > 0 %>
+			<div class="row">
+				<div class="span6">
+					<% flash.each do | key, value | %>
+						<div class="alert alert-success">
+							<button type="button" class="close" data-dismiss="alert">x</button>
+							<%= value %>
+						</div>
+					<% end %>
+				</div>
+			</div>
+		<% end %>
+		<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :class => "form-horizontal" }) do | f | %>
+		    <legend>Welcome</legend>
+		    <p style="margin-bottom:30px;">In order to begin blogging, please create your author account.</p>
+		
+		    <div class="control-group <%= "error" unless resource.errors[:email].empty? %>">
+		        <label class="control-label" for="inputEmail">Email</label>
+		
+		        <div class="controls">
+		        	<%= f.email_field :email, :class => "span4", :placeholder => "Email Address" %>
+		        	<%= ("<span class=\"help-inline\">%s</span>" % resource.errors[:email]).html_safe unless resource.errors[:email].empty? %>
+		        </div>
+		    </div>
+		
+		    <div class="control-group <%= "error" unless resource.errors[:password].empty? %>">
+		        <label class="control-label" for="inputPassword">Password</label>
+		
+		        <div class="controls">
+		            <%= f.password_field :password, :class => "span4", :placeholder => "Password" %>
+		            <%= ("<span class=\"help-inline\">%s</span>" % resource.errors[:password]).html_safe unless resource.errors[:password].empty? %>
+		        </div>
+		    </div>
+		    
+		    <div class="control-group <%= "error" unless resource.errors[:password_confirmation].empty? %>">
+		        <label class="control-label" for="inputPassword">Confirm</label>
+		
+		        <div class="controls">
+		            <%= f.password_field :password_confirmation, :class => "span4", :placeholder => "Confirm Password" %>
+		            <%= ("<span class=\"help-inline\">%s</span>" % resource.errors[:password_confirmation]).html_safe unless resource.errors[:password_confirmation].empty? %>
+		        </div>
+		    </div>
+	
+		    <div class="span7" style="text-align:center; margin-top:30px;">
+                <%= f.submit :class => "btn btn-large", :value => "Finish" %>
+            </div>
+		<% end %>
+    </div>
+</div>

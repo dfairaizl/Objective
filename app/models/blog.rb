@@ -12,7 +12,7 @@ class Blog
 	
 	validates_presence_of :blog_name, message: "Please enter a blog name"
 	
-	validates_length_of :blog_description, maximum: 255, message: "Tagline cannot exceed 256 characters"
+	validates_length_of :blog_description, maximum: 256, message: "Tagline cannot exceed 256 characters"
 	
 	validates_presence_of :blog_domain, message: "Please enter your blog's domain name"
 	

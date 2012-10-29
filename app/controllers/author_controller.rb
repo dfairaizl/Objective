@@ -10,9 +10,11 @@ class AuthorController < ApplicationController
   	
   	@blog = Blog.first
   	
-  	redirect_to author_install_index_path if @blog.nil?
-  	
-  	authenticate_author!
+  	if @blog.nil?
+	  redirect_to author_install_index_path
+  	else 
+      authenticate_author!
+  	end
   	
   end
   
