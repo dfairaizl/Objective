@@ -13,11 +13,10 @@ class Author::InstallController < ApplicationController
   def create
   
     @blog = Blog.new(params[:blog])
-    @blog.author = Author.new(params[:author])
 
-    respond_to do |format|
+    respond_to do | format |
       if @blog.save
-        format.html { redirect_to admin_posts_path }
+        format.html { redirect_to new_author_registration_path }
       else
         format.html { render action: "index" }
       end

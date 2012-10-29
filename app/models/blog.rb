@@ -18,7 +18,7 @@ class Blog
 	
 	#Associations
 	
-	embeds_one :author, validate: true
+	has_one :author, validate: true
 	
 	has_many :posts, validate: false
 

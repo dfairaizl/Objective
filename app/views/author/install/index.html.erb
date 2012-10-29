@@ -46,32 +46,34 @@
 
             <p class="lead">Author Information</p>
             <%= fields_for :author do | a | %>
-	            <div class="control-group <%= "error" unless @blog.errors[:author_username].empty? %>">
-	                <label class="control-label" for="author_username">Author Username:</label>
-	
-	                <div class="controls">
-	                    <%= a.text_field :author_username, :class => "span4", :placeholder => "Hemingway" %>
-	                    <%= ("<span class=\"help-inline\">%s</span>" % @blog.errors[:author_username]).html_safe unless @blog.errors[:author_username].empty? %>
-	                </div>
-	            </div>
-	
-	            <div class="control-group <%= "error" unless @blog.errors[:author_password].empty? %>">
-	                <label class="control-label" for="author_password">Author Password:</label>
-	
-	                <div class="controls">
-	                	<%= a.password_field :author_password, :class => "span4", :placeholder => "OldM@n0fTheS33!" %>
-	                	<%= ("<span class=\"help-inline\">%s</span>" % @blog.errors[:author_password]).html_safe unless @blog.errors[:author_password].empty? %>
-	                </div>
-	            </div>
-	
-	            <div class="control-group <%= "error" unless @blog.errors[:author_email].empty? %>">
+
+            	<div class="control-group <%= "error" unless @blog.errors[:email].empty? %>">
 	                <label class="control-label" for="author_email">Author Email:</label>
 	
 	                <div class="controls">
-	                	<%= a.text_field :author_email, :class => "span4", :placeholder => "ehemingway@oakpark.com" %>
-	                	<%= ("<span class=\"help-inline\">%s</span>" % @blog.errors[:author_email]).html_safe unless @blog.errors[:author_email].empty? %>
+	                	<%= a.text_field :email, :class => "span4", :placeholder => "ehemingway@oakpark.com" %>
+	                	<%= ("<span class=\"help-inline\">%s</span>" % @blog.errors[:email]).html_safe unless @blog.errors[:email].empty? %>
 	                </div>
 	            </div>
+	            	
+	            <div class="control-group <%= "error" unless @blog.errors[:password].empty? %>">
+	                <label class="control-label" for="author_password">Author Password:</label>
+	
+	                <div class="controls">
+	                	<%= a.password_field :password, :class => "span4", :placeholder => "OldM@n0fTheS33!" %>
+	                	<%= ("<span class=\"help-inline\">%s</span>" % @blog.errors[:password]).html_safe unless @blog.errors[:password].empty? %>
+	                </div>
+	            </div>
+	            
+	            <div class="control-group <%= "error" unless @blog.errors[:password_confirmation].empty? %>">
+	                <label class="control-label" for="author_password">Confirm Password:</label>
+	
+	                <div class="controls">
+	                	<%= a.password_field :password_confirmation, :class => "span4" %>
+	                	<%= ("<span class=\"help-inline\">%s</span>" % @blog.errors[:password_confirmation]).html_safe unless @blog.errors[:password_confirmation].empty? %>
+	                </div>
+	            </div>
+
 	        <% end %>
 
             <div class="span7" style="text-align:center; margin-top:30px;">
