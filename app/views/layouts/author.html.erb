@@ -43,13 +43,13 @@
                 
                 <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"></button> 
                 
-                <a class="brand" href="#">Objective</a>
+                <span class="brand">Objective</span>
 
                 <div class="nav-collapse collapse">
                     <ul class="nav">
-                        <li><a href="<%= author_path %>">Home</a></li>
+                        <%= nav_link 'Home', author_path %>
 
-                        <li class="active"><a href="<%= author_posts_path %>">Posts</a></li>
+                        <%= nav_link 'Posts', author_posts_path %>
 
                         <li><a href="#">Pages</a></li>
 
@@ -60,7 +60,7 @@
                         <li><a href="#">Settings</a></li>
                     </ul>
                     <ul class="nav pull-right"> 
-                    	<li><a href="#">View Site</a></li>
+                    	<li><%= link_to 'View Site', root_path, :target => "_blank" %></li>
                     	<li class="divider-vertical"></li>
                     	<li class="dropdown">
                     		<a href="#" class="dropdown-toggle" data-toggle="dropdown">
