@@ -70,7 +70,7 @@
 	                    		<li><a href="#">Notifications</a></li>
 	                    		<li><a href="#">My Account</a></li> 
 	                    		<li class="divider"></li>
-	                    		<li><a href="#">Log Out</a></li>
+	                    		<li><%= link_to "Sign Out", destroy_author_session_path, :method => :delete %></li>
                     		</ul> 
                     	</li>
                     </ul>
