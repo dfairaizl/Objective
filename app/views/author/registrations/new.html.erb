@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="span8 offset3">
+    <div class="span8 offset2">
     	<% if flash.count > 0 %>
 			<div class="row">
 				<div class="span6">
@@ -16,11 +16,31 @@
 		    <legend>Welcome</legend>
 		    <p style="margin-bottom:30px;">In order to begin blogging, please create your author account.</p>
 		
+		    <div class="control-group <%= "error" unless resource.errors[:first_name].empty? %>">
+		        <label class="control-label" for="first_name">First Name</label>
+		
+		        <div class="controls">
+		        	<%= f.text_field :first_name, :class => "span4", :placeholder => "Ernest" %>
+		        	<%= ("<span class=\"help-inline\">%s</span>" % resource.errors[:first_name]).html_safe unless resource.errors[:first_name].empty? %>
+		        </div>
+		    </div>
+		
+		    <div class="control-group <%= "error" unless resource.errors[:last_name].empty? %>">
+		        <label class="control-label" for="last_name">Last Name</label>
+		
+		        <div class="controls">
+		            <%= f.text_field :last_name, :class => "span4", :placeholder => "Hemingway" %>
+		            <%= ("<span class=\"help-inline\">%s</span>" % resource.errors[:last_name]).html_safe unless resource.errors[:last_name].empty? %>
+		        </div>
+		    </div>
+		    
+		    <hr />
+		    
 		    <div class="control-group <%= "error" unless resource.errors[:email].empty? %>">
 		        <label class="control-label" for="inputEmail">Email</label>
 		
 		        <div class="controls">
-		        	<%= f.email_field :email, :class => "span4", :placeholder => "Email Address" %>
+		        	<%= f.email_field :email, :class => "span4", :placeholder => "ehemingway@nytimes.com" %>
 		        	<%= ("<span class=\"help-inline\">%s</span>" % resource.errors[:email]).html_safe unless resource.errors[:email].empty? %>
 		        </div>
 		    </div>
@@ -29,7 +49,7 @@
 		        <label class="control-label" for="inputPassword">Password</label>
 		
 		        <div class="controls">
-		            <%= f.password_field :password, :class => "span4", :placeholder => "Password" %>
+		            <%= f.password_field :password, :class => "span4", :placeholder => "O1dM@n0fth3sea" %>
 		            <%= ("<span class=\"help-inline\">%s</span>" % resource.errors[:password]).html_safe unless resource.errors[:password].empty? %>
 		        </div>
 		    </div>
@@ -38,7 +58,7 @@
 		        <label class="control-label" for="inputPassword">Confirm</label>
 		
 		        <div class="controls">
-		            <%= f.password_field :password_confirmation, :class => "span4", :placeholder => "Confirm Password" %>
+		            <%= f.password_field :password_confirmation, :class => "span4" %>
 		            <%= ("<span class=\"help-inline\">%s</span>" % resource.errors[:password_confirmation]).html_safe unless resource.errors[:password_confirmation].empty? %>
 		        </div>
 		    </div>

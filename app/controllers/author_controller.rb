@@ -13,7 +13,11 @@ class AuthorController < ApplicationController
   	if @blog.nil?
 	  redirect_to author_install_index_path
   	else 
-      authenticate_author!
+  		if @blog.author.nil?
+  			redirect_to new_author_registration_path
+  		else 
+  			authenticate_author!
+		end
   	end
   	
   end
