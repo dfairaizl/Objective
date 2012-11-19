@@ -47,3 +47,7 @@ gem 'redcarpet'
 
 #Devise Authentication
 gem 'devise'
+
+#Linux required gems
+gem 'execjs'
+gem 'therubyracer', :platforms => :ruby
