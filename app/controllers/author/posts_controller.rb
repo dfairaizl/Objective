@@ -18,7 +18,7 @@ class Author::PostsController < AuthorController
   	
   	if @post.save
   		flash[:notice] = "Post %s created successfully" % @post.title
-  		redirect_to admin_posts_path
+  		redirect_to author_posts_path
   	else 
   		render :action => new
   	end
@@ -38,7 +38,7 @@ class Author::PostsController < AuthorController
   	
   	if @post.update_attributes(post_data)
   		flash[:notice] = "Post %s updated successfully" % @post.title
-  		redirect_to admin_posts_path
+  		redirect_to author_posts_path
   	end
   	
   end
