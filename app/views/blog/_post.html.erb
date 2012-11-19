@@ -1,0 +1,5 @@
+<%  markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, :autolink => true, :space_after_headers => true) %>
+
+<h1><%= post.title %></h1>
+
+<%= markdown.render(post.content).html_safe %>
