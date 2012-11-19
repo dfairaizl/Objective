@@ -33,4 +33,18 @@ class Author
   #Accessors
   attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me
   
+  #Callbacks
+  after_create :associate_author
+  
+  private
+  
+  def associate_author
+  
+  	blog = Blog.first
+  	blog.author = self
+  	
+  	blog.save!
+  	
+  end
+  
 end

@@ -7,7 +7,7 @@ class AuthorController < ApplicationController
   private
   
   def bootstrap_blog
-  	
+  
   	@blog = Blog.first
   	
   	if @blog.nil?
@@ -15,9 +15,9 @@ class AuthorController < ApplicationController
   	else 
   		if @blog.author.nil?
   			redirect_to new_author_registration_path
-  		else 
+  		else
   			authenticate_author!
-		end
+  		end
   	end
   	
   end
