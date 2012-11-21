@@ -17,7 +17,8 @@ class Author::InstallController < ApplicationController
     @blog.metablog = Metablog.new(params[:metablog])
 
     respond_to do | format |
-      if @blog.save
+      if @blog.metablog.save
+      	@blog.save
         format.html { redirect_to new_author_registration_path }
       else
         format.html { render action: "index" }
