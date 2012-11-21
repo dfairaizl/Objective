@@ -30,19 +30,7 @@
     	<div class="content" style="padding:20px;">
 	        <div class="row-fluid">
 	            <div class="span3" style="border-top:5px solid #87b0da">
-	            	<div class="pagination-centered">
-		            	<%= link_to(image_tag("ObjIO.png"), root_url) %>
-	            	</div>
-	                <h1>Objective.io</h1>
-	                
-	                <p class="lead muted" style="margin-left:3px;">Dan Fairaizl</p>
-	                
-	                <hr />
-	                
-	                <h5><a href="#">Who Am I?</a></h5>
-	                <h5><a href="#">Get In Touch</a></h5>
-	                <h5><a href="#">Feed</a></h5>
-	                
+	            	<%= render :partial => "sidebar", :locals => { :metablog => @metablog }  %>
 	            </div>
 	
 	            <div class="span8" style="border-top:5px solid #87b0da">
