@@ -4,6 +4,7 @@ class Author::InstallController < ApplicationController
 
   def index
   	@blog = Blog.new
+  	@blog.metablog = Metablog.new
   end
   
   def new
@@ -12,7 +13,8 @@ class Author::InstallController < ApplicationController
   
   def create
   
-    @blog = Blog.new(params[:blog])
+    @blog = Blog.new()
+    @blog.metablog = Metablog.new(params[:metablog])
 
     respond_to do | format |
       if @blog.save
